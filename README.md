@@ -1,7 +1,10 @@
 # Online emission processing
 
-Preprocessing of the emissions for the online emission module of cosmo.
-Produces gridded annual emissions as well as temporal and vertical profiles.
+Preprocessing of the emissions for the online emission module for COSMO-ART, COSMO-GHG
+and ICON-ART (Jähn et al., Geosci. Model Dev., 13, 2379–2392, 2020, 
+https://doi.org/10.5194/gmd-13-2379-2020).
+
+Produces gridded annual emissions per sector as well as temporal and vertical profiles.
 
 ## Installation
 To use the code, just download or clone the repository. The package can be installed with
@@ -36,9 +39,11 @@ be obtained separately.
     $ python -m emiproc vp                         # for vertical profiles
 ```
 
+Further examples, including the generation of offline files and inventory merging, can be found in [cases/README.md](cases/README.md)
+
 ## Gridded annual emissions
 
-Emissions are read from the inventory and projected onto the COSMO grid.
+Emissions are read from the inventory and projected onto the COSMO or ICON grid.
 
 The necessary information, such as grid characterstics and species, are supplied via
 a config file. Since emission inventories can be structured quite differently, it may

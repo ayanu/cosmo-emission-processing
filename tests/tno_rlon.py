@@ -11,66 +11,53 @@ inventory = 'TNO'
 model = 'cosmo-ghg'
 
 # path to input inventory
-input_path = "/input/TNOMACC/TNO_GHGco/TNO_6x6_GHGco_v1_1/TNO_GHGco_v1_1_year2015.nc"
+input_path = "test_emissions.nc"
 
 # input grid
 input_grid = TNOGrid(input_path)
 
 # input species
-species = ['co2_ff', 'co2_bf']
+species = ['co2_ff']
 
 # input categories
 categories = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F1",
-    "F2",
-    "F3",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
+  "A",
 ]
 
 # mapping from input to output species (input is used for missing keys)
 in2out_species = {
     'co2_ff': 'CO2',
-    'co2_bf': 'CO2'
 }
 
 # mapping from input to output species (input is used for missing keys)
-in2out_category = {}
+in2out_category = {
+}
 
 # output variables are written in the following format using species and
 # category after applying mapping as well as source_type (AREA or POINT) for
 # TNO inventories
-varname_format = '{species}_{category}' # not providing source_type will add up
-                                        # point and area sources
+varname_format = '{species}_{category}_{source_type}' # not providing source_type will add up
+                                                      # point and area sources
 
 # COSMO domain
 output_grid = COSMOGrid(
-    nx=450, #900
-    ny=300, #600
-    dx=0.02, #0.01
-    dy=0.02, #0.01
-    xmin=-4.92,
-    ymin=-3.18,
-    pollon=-170.0,
+    nx=26, #900
+    ny=26, #600
+    dx=0.01, #0.01
+    dy=0.01, #0.01
+    xmin=-0.13,
+    ymin=-0.13,
+    pollon=-169.0,
     pollat=43.0,
 )
 
 
 # output path and filename
 output_path = os.path.join('outputs', '{online}')
-output_name = "tno.nc"
+output_name = "outgrid.nc"
 
 # resolution of shape file used for country mask
-shpfile_resolution = "10m" 
+shpfile_resolution = "110m" 
 
 # number of processes computing the mapping inventory->COSMO-grid
 nprocs = 18
@@ -79,8 +66,8 @@ nprocs = 18
 nc_metadata = {
     "DESCRIPTION": "Gridded annual emissions",
     "DATAORIGIN": "TNO",
-    "CREATOR": "Jean-Matthieu Haussaire",
-    "EMAIL": "jean-matthieu.haussaire@empa.ch",
+    "CREATOR": "Erik Koene",
+    "EMAIL": "erik.koene@empa.ch",
     "AFFILIATION": "Empa Duebendorf, Switzerland",
     "DATE CREATED": time.ctime(time.time()),
 }
