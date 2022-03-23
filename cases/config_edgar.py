@@ -16,10 +16,10 @@ input_year = 2015
 
 # input grid
 input_grid = EDGARGrid(
-    xmin=-30,
-    xmax=60,
-    ymin=30,
-    ymax=69,
+    xmin=-130,
+    xmax=65,
+    ymin=15,
+    ymax=80,
     dx=0.1,
     dy=0.1,
 )
@@ -65,14 +65,14 @@ varname_format = '{species}_EDGAR'
 # Domain
 # CHE_Europe domain
 cosmo_grid = COSMOGrid(
-    nx=760,
-    ny=610,
-    dx=0.05,
-    dy=0.05,
-    xmin=-17,
-    ymin=-11,
-    pollon=-170,
-    pollat=43,
+    nx=321,
+    ny=121,
+    dx=0.5,
+    dy=0.5,
+    xmin=-99.75,
+    ymin=15.25,
+    pollon=180,
+    pollat=90,
 )
 
 # output path and filename

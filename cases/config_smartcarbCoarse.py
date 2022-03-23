@@ -79,8 +79,8 @@ cosmo_grid = COSMOGrid(
 
 
 # output path and filename
-output_path = os.path.join('outputs', '{online}')
-output_name = "smartcarb_coarse_TNO6.nc"
+output_path = "/project/hes134/projects/SMARTCARB/oae/smartcarbCoarse"
+output_name = "smartcarbCoarse_TNO6.nc"
 
 # resolution of shape file used for country mask
 shpfile_resolution = "110m" 
